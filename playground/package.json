@@ -16,7 +16,7 @@
 		"@astrojs/tailwind": "^5.1.0",
 		"astro": "^4.8.3",
 		"astro-integration-kit": "^0.13.2",
-		"my-integration": "file:.yalc/my-integration",
+		"my-integration": "workspace:*",
 		"react": "^18.3.1",
 		"react-dom": "^18.3.1",
 		"tailwindcss": "^3.4.3"
