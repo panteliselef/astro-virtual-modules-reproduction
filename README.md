@@ -1,9 +1,10 @@
-# package-name
+# my-integration
 
-TODO:description
+## Instruction for reproduction
+Issue `Could not resolve "als:astro"`
 
-To see how to get started, check out the [package README](./package/README.md)
-
-## Licensing
-
-[MIT Licensed](./LICENSE). Made with ❤️ by [TODO:user](https://github.com/TODO:github-user).
+- `pnpm i`
+- `cd package && pnpm build && yalc push --replace --sig`
+- `cd ../playground`
+- `yalc add -- my-integration`
+- `pnpm i && rm -rf dist/ && pnpm dev`
