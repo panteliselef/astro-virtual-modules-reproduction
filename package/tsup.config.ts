@@ -1,19 +1,27 @@
 import { defineConfig } from "tsup";
-import { peerDependencies } from "./package.json";
+import { name, version } from "./package.json";
 
-export default defineConfig((options) => {
-	const dev = !!options.watch;
-	return {
-		entry: ["src/**/*.(ts|js)"],
-		format: ["esm"],
-		target: "node18",
-		bundle: true,
-		dts: true,
-		sourcemap: true,
-		clean: true,
-		splitting: false,
-		minify: !dev,
-		external: [...Object.keys(peerDependencies)],
-		tsconfig: "tsconfig.json",
-	};
+export default defineConfig(() => {
+  return {
+    clean: true,
+    entry: ["./src/index.ts", "./src/middleware.ts", "./src/data.ts"],
+    dts: true,
+    minify: false,
+    define: {
+      PACKAGE_NAME: `"${name}"`,
+      PACKAGE_VERSION: `"${version}"`,
+    },
+    bundle: true,
+    sourcemap: true,
+    splitting: false,
+    format: ["esm"],
+    target: "node18",
+    external: [
+      "astro",
+      "react",
+      "react-dom",
+      "virtual:astro-als/internal/als",
+      "als:astro",
+    ],
+  };
 });

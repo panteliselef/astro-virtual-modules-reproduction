@@ -1,9 +1,21 @@
 ---
-import Card from "../components/Card.astro";
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import { getAlsData } from "my-integration/data";
+import Whatever from '../components/Whatever';
+const data = getAlsData();
 ---
 
 <Layout title="Welcome to Astro.">
+	{JSON.stringify(data)}
+	<Whatever client:idle/>
+	<script>
+		import { getAlsData } from "my-integration/data";
+		import { getAlsData  as nice} from "als:astro";
+		const data = getAlsData();
+		console.log("my-integration/data", data)
+		console.log("als:astro", nice())
+	</script>
 	<main>
 		<svg
 			class="astro-a"

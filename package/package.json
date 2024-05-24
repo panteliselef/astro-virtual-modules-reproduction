@@ -1,21 +1,13 @@
 {
-	"name": "package-name",
+	"name": "my-integration",
 	"version": "0.0.0",
-	"description": "TODO:",
-	"author": {
-		"email": "TODO:",
-		"name": "TODO:",
-		"url": "TODO:"
-	},
 	"license": "MIT",
 	"keywords": [
 		"astro-integration",
 		"astro-component",
 		"withastro",
-		"astro",
-		"TODO:"
+		"astro"
 	],
-	"homepage": "TODO:",
 	"publishConfig": {
 		"access": "public"
 	},
@@ -24,9 +16,20 @@
 		".": {
 			"types": "./dist/index.d.ts",
 			"default": "./dist/index.js"
-		}
+		},
+		"./middleware": {
+			"types": "./dist/middleware.d.ts",
+			"default": "./dist/middleware.js"
+		},
+		"./data": {
+			"types": "./dist/data.d.ts",
+			"default": "./dist/data.js"
+		},
+		"./AlsSerialize.astro": "./assets/AlsSerialize.astro"
 	},
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"scripts": {
 		"dev": "tsup --watch",
 		"build": "tsup"
@@ -39,6 +42,7 @@
 		"astro-integration-kit": "^0.13.2"
 	},
 	"devDependencies": {
-		"tsup": "^8.0.2"
+		"tsup": "^8.0.2",
+		"vite": "^5.2.11"
 	}
 }
