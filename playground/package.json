@@ -14,7 +14,7 @@
 		"@astrojs/node": "^8.2.5",
 		"@astrojs/react": "^3.4.0",
 		"@astrojs/tailwind": "^5.1.0",
-		"astro": "^4.8.3",
+		"astro": "^4.11.3",
 		"astro-integration-kit": "^0.13.2",
 		"my-integration": "workspace:*",
 		"react": "^18.3.1",
